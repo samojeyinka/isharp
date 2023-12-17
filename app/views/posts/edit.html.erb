@@ -1,4 +1,4 @@
-<h1 class="">Add New Post</h1>
+<h1 class="">Edit Post</h1>
 
 
 <% if @post.errors.any? %>
@@ -26,5 +26,5 @@
     <%= form.file_field :thumbnail %>
   </div>
 
-  <%= form.submit "Publish" %>
+  <%= form.submit "Update" %>
 <% end %>

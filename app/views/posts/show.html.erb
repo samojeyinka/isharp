@@ -1,0 +1,9 @@
+<div class="posts_show">
+    <h3><%= @post.title %></h3>
+    <% if @post.thumbnail.attached? %>
+        <%= image_tag(@post.thumbnail, width:300) %>
+    <% else %>
+        <%= image_tag('nothumbnail.png', width:300) %>
+     <%end%>
+     <div><%= @post.content %></div>
+</div>
