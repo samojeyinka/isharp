@@ -1,0 +1,90 @@
+.postboxes{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:2rem;
+}
+
+.postbox{
+    padding: 1rem;
+}
+
+.post_img{
+   width: 100%;
+   height: 12rem; 
+   position: relative;
+}
+
+.post_img img{
+    width: 100%;
+    height: 100%;
+}
+
+.user_img_box{
+    width: 4rem;
+    height: 2.3rem;
+    position: absolute;
+    top: 1%;
+    right: 0;
+}
+
+.user_img_box img{
+    width: 100%;
+    height: 100%;
+}
+.postboxes h5{
+    padding: .4rem 0;
+    font-size: 1rem;
+    color: var(--gray-color);
+}
+
+
+
+.title a{
+    color: var(--dark-color);
+    font-size: 1.3rem;
+    transition: .2s ease-in-out;
+}
+
+.title a:hover{
+    color: var(--primary-color);
+}
+
+.postbox .description{
+    font-size: 1.1rem !important;
+    color: var(--gray-color);
+}
+
+.post_buttons{
+    display: flex;
+    gap: 2rem !important;
+}
+
+.post_buttons .p-action{
+    font-weight: 400;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.post_buttons .p-action.read{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.post_buttons .p-action.edit{
+    color: #058e05;
+}
+
+.post_buttons .p-action.delete{
+    color: #ff0000;
+}
+
+@media screen and (max-width: 960px) {
+    .postboxes{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width: 767px) {
+    .postboxes{
+        grid-template-columns:1fr;
+    }
+}

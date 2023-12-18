@@ -1,0 +1,30 @@
+<div class="postboxes">
+    <% @posts.each do |post| %>
+    
+    <div class="postbox shadow bg-white rounded">
+    <div class="post_img">
+        <%= link_to post_path(post) do %>
+    <% if post.thumbnail.attached? %>
+    <%= image_tag(post.thumbnail )%>
+    <% else %>
+    <%= image_tag('nothumbnail.png') %>
+    <%end%>
+    <div class="user_img_box">
+        <%= image_tag('useravatar.png') %>
+    </div>
+    <% end %>
+    </div>
+    <h5 class="category">Tech</h5>
+    <h3 class="title"><%= link_to truncate(post.title, length:60), post_path(post) %></h3>
+    <p class="description"><%= truncate(post.content,length:100) %></p>
+    
+    <div class="post_buttons">
+        <%= link_to "Read", post_path(post), class:"p-action read" %>
+        <%= link_to "Edit", edit_post_path(post), class:"p-action edit" %>
+        <%= link_to "Delete", post_path(post),class:"p-action delete",
+         data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    </div>
+    </div>
+    <% end %>
+    
+    </div>

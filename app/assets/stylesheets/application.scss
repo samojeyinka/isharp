@@ -1,1 +1,23 @@
 @import "bootstrap";
+
+:root{
+    --primary-color: #3131ad;
+    --dark-color:#000;
+    --gray-color:#808080;
+    --light-color:#fff;
+}
+
+
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+.app-con{
+    width: 95%;
+    max-width: 1920px !important;
+    margin: 0 auto;
+}
+
