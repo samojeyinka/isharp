@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
     def index 
-        @posts = Post.order("RANDOM()")   
+        @posts = Post.order("RANDOM()").paginate(page: params[:page], per_page: 10)  
     end
     def about
     end
