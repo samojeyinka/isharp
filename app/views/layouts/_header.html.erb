@@ -1,0 +1,17 @@
+<header>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+        <i class="fa-solid fa-bars checkbtn"></i>
+        </label>
+        <ul>
+          <li><%= link_to "Home", root_path, class:"home_link" %></li>
+          <div class="nav-right">
+            <li><%= link_to "About us", about_path %></li>
+            <li><%= link_to "Help & support", help_support_path %></li>
+            <li><%= link_to "Latests", posts_path %></li>
+          <li><%= link_to "Add Posts", new_post_path %></li>
+        </div>
+        </ul>
+      </nav>
+</header>

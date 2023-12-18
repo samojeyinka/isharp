@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
    before_action :find_params, only:[:show, :edit, :update,:destroy]
  def index
-    @posts = Post.all   
+   #  @posts = Post.all  
+   @posts = Post.order(:created_at).reverse_order 
  end
 
  def new
