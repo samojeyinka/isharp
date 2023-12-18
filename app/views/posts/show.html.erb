@@ -1,9 +1,32 @@
 <div class="posts_show">
-    <h3><%= @post.title %></h3>
+    <div class="post-part">
+    <h2><%= @post.title %></h2>
+    </div>
+    <div class="post-part">
+        <div class="show-img">
     <% if @post.thumbnail.attached? %>
         <%= image_tag(@post.thumbnail, width:300) %>
     <% else %>
         <%= image_tag('nothumbnail.png', width:300) %>
      <%end%>
-     <div><%= @post.content %></div>
+    </div>
+     </div>
+     <div class="post-part info">
+        <div class="info-part">
+            <div class="info-part-left">
+                <div class="info-part-left-img">
+                <% if @post.thumbnail.attached? %>
+                <%= image_tag(@post.thumbnail, width:300) %>
+                 <% else %>
+                <%= image_tag('useravatar.png', width:300) %>
+                <%end%>
+            </div>
+            <b>@samojeyinka</b>
+            </div>
+            <div class="info-part-right">
+                <h6>Published on <%= @post.created_at.strftime("%b %d")%></h6>
+            </div>
+        </div>
+     </div>
+     <div class="post-part content"><%= @post.content %></div>
 </div>
