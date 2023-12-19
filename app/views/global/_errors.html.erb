@@ -1,8 +1,8 @@
 <div>
-<% if @post.errors.any? %>
+<% if obj.errors.any? %>
   <ul class="error-box">
     <h3>Oops!😒</h3>
-    <% @post.errors.full_messages.each do |msg| %>
+    <% obj.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
   </ul>

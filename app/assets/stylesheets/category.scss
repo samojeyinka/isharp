@@ -1,0 +1,41 @@
+
+.flex-category-boxes{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap:2rem;
+  }
+
+  .category-box{
+    padding: 1rem;
+  }
+
+  .category-box p{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark-color);
+  }
+
+  @media screen and (max-width: 920px) {
+    .flex-category-boxes{
+      grid-template-columns: repeat(4,1fr);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .flex-category-boxes{
+      grid-template-columns: repeat(3,1fr);
+    }
+  }
+
+  .cat-opt-flex{
+    width: 100%;
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .cat-opt-flex .checkbox-inline{
+    cursor: pointer;
+  }

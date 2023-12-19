@@ -1,0 +1,12 @@
+
+<%= form_with(model: @category, data:{turbo:false}, local: true) do |f| %>
+<div class="form_box title_box">
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder:"Category name..." %>
+  </div>
+ 
+
+  <div class="form_box button">
+  <%= f.submit(@category.new_record? ? "Create" : "Update" , class:"publish_btn") %>
+</div>
+  <% end %>

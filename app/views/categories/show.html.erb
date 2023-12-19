@@ -1,0 +1,9 @@
+<h2 class="mt-2 mb-3 text-center"><%= @category.name %></h2>
+<% if @category.posts.count < 1 %>
+    <P>No post in this category yet</P>
+<% else %>
+<%= render 'posts/posts' %>
+<div class="apple_pagination mt-4">
+    <%= will_paginate @posts, :container=> false %>
+</div>
+<% end %>

@@ -53,7 +53,7 @@ def find_params
 end
 
 def post_inputs
-   params.require(:post).permit(:title, :content, :thumbnail)
+   params.require(:post).permit(:title, :content, :thumbnail, category_ids:[])
 end
  
 end

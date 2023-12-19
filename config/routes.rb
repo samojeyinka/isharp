@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'help-support', to: 'pages#helpsupport'
   resources :posts
+  resources :categories
 end
