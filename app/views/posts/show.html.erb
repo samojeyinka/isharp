@@ -21,7 +21,7 @@
                 <%= image_tag('useravatar.png', width:300) %>
                 <%end%>
             </div>
-            <b>@samojeyinka</b>
+            <b><%= @post.user.username %></b>
             </div>
             <div class="info-part-right">
                 <h6>Published on <%= @post.created_at.strftime("%b %d")%></h6>
