@@ -20,12 +20,16 @@
 }
 
 .user_img_box{
-    width: 4rem;
-    height: 2.3rem;
+    width: 2rem;
+    height: 2rem;
     position: absolute;
     top: 1%;
     right: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
 }
+
 
 .user_img_box img{
     width: 100%;

@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
    before_action :find_params, only:[:show, :edit, :update,:destroy]
+   before_action :require_user, except: [:index, :show]
+   before_action :require_exact_user, only: [:edit, :update, :destroy]
+   
  def index
    #  @posts = Post.all  
    @posts = Post.order(:created_at).reverse_order.paginate(page: params[:page], per_page: 10) 
@@ -11,9 +14,7 @@ class PostsController < ApplicationController
 
  def create
    @post = Post.new(post_inputs)
-
-   @post.user = User.first
-   
+   @post.user = current_user
    if @post.save
       flash[:notice] = "Post created successfully"
      redirect_to @post
@@ -57,6 +58,13 @@ end
 
 def post_inputs
    params.require(:post).permit(:title, :content, :thumbnail, category_ids:[])
+end
+
+def require_exact_user
+   if current_user != @post.user
+      flash[:alert] = "You do not have permission to perform this action"
+         redirect_to @post
+      end
 end
  
 end

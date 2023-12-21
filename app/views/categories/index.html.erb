@@ -7,14 +7,17 @@
 <P><%= link_to category.name, category_path(category) %></P>
 <small><%= pluralize(category.posts.count, "post") %></small>
 <div class="cat-act">
+
+    <% if logged_in? && category.posts.any? {|post| post.user == current_user} %>
     <%= link_to "Edit", edit_category_path(category), class:"p-action edit text-success" %>
     <%= link_to "Delete", category_path(category),class:"p-action delete text-danger",
      data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+     <% end %>
+
 </div>
 </div>
 <% end %>
 </div>
-
 <% else %>
     <h5 class="text-center mt-5">😒No category created yet</h5>
 <% end %>

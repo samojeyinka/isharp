@@ -9,11 +9,19 @@
     <% else %>
     <%= image_tag('nothumbnail.png') %>
     <%end%>
+
+    <%= link_to user_path(post.user) do %>
     <div class="user_img_box">
-        <%= image_tag('useravatar.png') %>
+    <% if post.user.profileImage.attached? %>
+    <%= image_tag(post.user.profileImage )%>
+    <% else %>
+    <%= image_tag('useravatar.png') %>
+    <%end%>
     </div>
     <% end %>
     </div>
+    <%end%>
+
 
     <h5 class="category">
         <% if post.categories.any? %>
@@ -28,9 +36,12 @@
     
     <div class="post_buttons">
         <%= link_to "Read", post_path(post), class:"p-action read" %>
+        <% if logged_in? && post.user == current_user %>
         <%= link_to "Edit", edit_post_path(post), class:"p-action edit" %>
         <%= link_to "Delete", post_path(post),class:"p-action delete",
          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+         <% end %>
+
     </div>
     </div>
     <% end %>

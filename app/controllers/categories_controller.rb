@@ -1,9 +1,10 @@
 class CategoriesController < ApplicationController
     before_action :find_params, only: [:show, :edit, :update, :destroy]
+    before_action :require_user, except: [:show, :index]
 
 def index
     @categories = Category.all
-    
+         
 end
 
 def create

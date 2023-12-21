@@ -15,11 +15,13 @@
         <div class="info-part">
             <div class="info-part-left">
                 <div class="info-part-left-img">
-                <% if @post.thumbnail.attached? %>
-                <%= image_tag(@post.thumbnail, width:300) %>
-                 <% else %>
-                <%= image_tag('useravatar.png', width:300) %>
-                <%end%>
+                    <%= link_to user_path(@post.user) do %>
+                    <% if @post.user.profileImage.attached? %>
+                    <%= image_tag(@post.user.profileImage )%>
+                    <% else %>
+                    <%= image_tag('useravatar.png') %>
+                    <% end %>
+                    <%end%>
             </div>
             <b><%= @post.user.username %></b>
             </div>

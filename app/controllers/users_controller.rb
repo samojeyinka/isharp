@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
     before_action :find_user, only: [:show,:edit,:update, :destroy]
-
+    before_action :require_user, except: [:show,:index]
+    before_action :require_exact_user, only: [:edit,:update, :destroy]
+    
 #users lists
 def index
     @users = User.all
@@ -19,7 +21,9 @@ end
 #new user action
 def create
     @user = User.new(user_params)
+   
     if @user.save
+        session[:user_id] = @user.id
         flash[:notice] = "User created successfully"
         redirect_to posts_path
     else
@@ -62,5 +66,12 @@ end
 def find_user
     @user = User.find(params[:id]) 
 end
+
+def require_exact_user
+    if current_user != @user
+       flash[:alert] = "You do not have permission to perform this action"
+          redirect_to @user
+       end
+ end
 
 end
