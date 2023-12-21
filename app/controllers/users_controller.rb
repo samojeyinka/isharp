@@ -33,8 +33,7 @@ end
 
 #edit user action
 def update
-    @user = User.update(user_params)
-    if @user.save
+    if @user.update(user_params)
         flash[:notice] = "User updated successfully"
         redirect_to posts_path
     else
@@ -46,7 +45,7 @@ end
 def destroy
     if @user.destroy
         flash[:notice] = "Account deleted"
-        redirect_to root_path
+        redirect_to users_path
     else
         flash[:alert] = "Unable to delete account"
     end

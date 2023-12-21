@@ -1,0 +1,11 @@
+<div class="user-profile">
+    <div class="user-pics">
+    <% if @user.profileImage.attached? %>
+    <%= image_tag(@user.profileImage , width:300)%>
+    <% else %>
+    <%= image_tag('nothumbnail.png',width:300) %>
+    <%end%>
+    </div>
+    <h3>@<%= @user.username %></h3>
+    <p><%= @user.email %></p>
+</div>

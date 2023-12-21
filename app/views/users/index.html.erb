@@ -1,0 +1,22 @@
+<div class="all-users">
+    <div class="flex-users-box">
+        <% @users.each do |user| %>
+        <div class="user-box">
+            <div class="user-pics">
+                <% if user.profileImage.attached? %>
+                <%= image_tag(user.profileImage , width:300)%>
+                <% else %>
+                <%= image_tag('nothumbnail.png',width:300) %>
+                <%end%>
+                </div>
+            <h5><%= user.username %></h5>
+            <%= link_to "View profile", user_path(user) %>
+            <%= link_to "Edit profile", edit_user_path(user) %>
+            <%= link_to "Delete profile", user_path(user), 
+            data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+        <br/>
+        <hr/>
+        <% end %>
+    </div>
+</div>
