@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   get 'help-support', to: 'pages#helpsupport'
   resources :posts
   resources :categories
+
+  get 'signup', to: 'users#new' 
+  resources :users, except: [:new]
+  
 end
