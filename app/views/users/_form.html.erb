@@ -16,6 +16,11 @@
         <%= f.label :password %>
         <%= f.password_field :password, placeholder:"Enter Password"  %>
       </div>
+
+      <div class="form_box thumnail">
+        <%= f.label :picture %>
+        <%= f.file_field :profileImage %>
+      </div>
       
         <%= f.submit(@user.new_record? ? "Sign Up" : "Update account", class:"sign_btn") %>
       
