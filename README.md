@@ -11,21 +11,21 @@
 
 
 
-🚀 [Isharp] - A Ruby on Rails Blogging Platform 🚀
+## 🚀 Isharp - A Ruby on Rails Blogging Platform 🚀
 
 Welcome to [Isharp], a lightweight and feature-rich blogging platform built on Ruby on Rails. This project allows users to easily sign up and sign in, granting authenticated users the power to create, edit, and manage their own posts and categories.
 
-✨ Key Features:
+## ✨ Key Features:
 
-User Authentication: Seamlessly sign up and sign in to unlock the full potential of [Isharp]. Authenticated users have exclusive access to content creation and customization.
+**User Authentication:** Seamlessly sign up and sign in to unlock the full potential of [Isharp]. Authenticated users have exclusive access to content creation and customization.
 
-Content Creation: Express yourself through compelling posts. Authenticated users can create, edit, and delete their own posts, ensuring complete control over their content.
+**Content Creation:** Express yourself through compelling posts. Authenticated users can create, edit, and delete their own posts, ensuring complete control over their content.
 
-Category Management: Organize your content with custom categories. Authenticated users with at least one post in a category can delete or edit it, providing a flexible and personalized categorization experience.
+**Category Management:** Organize your content with custom categories. Authenticated users with at least one post in a category can delete or edit it, providing a flexible and personalized categorization experience.
 
-Account Control: Manage your profile with ease. Authenticated users can delete their accounts when needed, putting control over personal data in the hands of the user.
+**Account Control:** Manage your profile with ease. Authenticated users can delete their accounts when needed, putting control over personal data in the hands of the user.
 
-📝 Usage:
+# 📝 Usage:
 
 Clone the repository.
 Set up your Ruby on Rails environment.
