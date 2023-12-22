@@ -9,13 +9,15 @@
                 <%= image_tag('nothumbnail.png',width:300) %>
                 <%end%>
                 </div>
-            <h5><%= user.username %></h5>
+            <h5>@<%= user.username %></h5>
+            <div class="profile-actions">
             <%= link_to "View profile", user_path(user) %>
                 <% if logged_in? && user == current_user %>
             <%= link_to "Edit profile", edit_user_path(user) %>
             <%= link_to "Delete profile", user_path(user), 
             data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             <% end %>
+        </div>
         </div>
         <br/>
         <hr/>

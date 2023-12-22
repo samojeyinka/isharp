@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :find_user, only: [:show,:edit,:update, :destroy]
-    before_action :require_user, except: [:show,:index]
+    before_action :require_user, only: [:show]
     before_action :require_exact_user, only: [:edit,:update, :destroy]
     
 #users lists
@@ -10,7 +10,7 @@ end
 
 #each user show route
 def show
-  
+    @posts = @user.posts.paginate(page: params[:page], per_page: 10) 
 end
 
 #signup route or new user route
@@ -24,8 +24,8 @@ def create
    
     if @user.save
         session[:user_id] = @user.id
-        flash[:notice] = "User created successfully"
-        redirect_to posts_path
+        flash[:notice] = "Account created successfully"
+        redirect_to @user
     else
       render 'new'
     end

@@ -8,4 +8,24 @@
     </div>
     <h3>@<%= @user.username %></h3>
     <p><%= @user.email %></p>
+    <div class="profile-actions">
+        <% if logged_in? && @user == current_user %>
+        <%= link_to "Edit profile", edit_user_path(@user) %>
+        <%= link_to "Delete profile", user_path(@user), 
+        data:{turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <% end %>
+    </div>
+</div>
+
+<div class="user-posts mt-5">
+    <h3 class="text-center">Posts</h3>
+<% if @user.posts.count < 1 %>
+    <button class="btn btn-outline-primary">This user hasn't made any posts.</button>
+
+<% else %>
+<%= render 'posts/posts' %>
+<div class="apple_pagination mt-4">
+    <%= will_paginate @posts, :container=> false %>
+</div>
+<% end %>
 </div>

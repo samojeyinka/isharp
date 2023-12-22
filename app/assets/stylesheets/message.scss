@@ -1,0 +1,19 @@
+
+.msgbox{
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: .6rem 0;
+  }
+
+  .msgbox.success-alert{
+    background: rgba(144, 238, 144, 0.211);
+    border: 2px solid green;
+    color: green;
+  }
+
+  .msgbox.danger-alert{ 
+    background:rgba(255, 0, 0, 0.124);
+    border: 2px solid red;
+    color: red;
+  }

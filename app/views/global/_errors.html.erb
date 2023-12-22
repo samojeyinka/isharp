@@ -1,4 +1,4 @@
-<div>
+<div id="errcon">
 <% if obj.errors.any? %>
   <ul class="error-box">
     <h3>Oops!😒</h3>
@@ -8,3 +8,9 @@
   </ul>
 <% end %>
 </div>
+
+<script>
+  setTimeout(() => {
+      document.getElementById('errcon').style.display = 'none';
+  }, 3000)
+</script>

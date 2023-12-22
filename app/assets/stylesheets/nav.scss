@@ -12,10 +12,16 @@ nav ul{
     align-items: center;
 }
 
-nav ul li a{
+nav ul li a,nav ul li{
     font-size: 1.1rem;
     font-weight: 500;
     color: var(--light-color);
+}
+
+nav .signout a{
+    color: red;
+    background: var(--light-color);
+    padding: .3rem;
 }
 
 nav ul .nav-right{

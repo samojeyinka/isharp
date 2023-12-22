@@ -1,0 +1,13 @@
+<div id="msgcon">
+<% flash.each do |name, msg| %>
+<div class="msgbox <%= name == 'notice' ? 'success-alert' : 'danger-alert' %>">
+<%= msg %>
+</div>
+<% end %>
+</div>
+
+<script>
+    setTimeout(() => {
+        document.getElementById('msgcon').style.display = 'none';
+    }, 3000)
+</script>
