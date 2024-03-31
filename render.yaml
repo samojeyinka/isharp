@@ -1,23 +1,22 @@
 databases:
-  - name: sharp
-    databaseName: sharp_q86o
-    user: sharp_q86o_user
+  - name: mysite
+    databaseName: mysite
+    user: mysite
     plan: free
 
 services:
   - type: web
-    name: sharp
+    name: mysite
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
-    # preDeployCommand: "./bin/rails db:migrate" # preDeployCommand only available on paid instance types
-    startCommand: "./bin/rails server"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "bundle exec rails server"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: sharp
+          name: mysite
           property: connectionString
       - key: RAILS_MASTER_KEY
-        sync: false
-      - key: WEB_CONCURRENCY
+        sync:false- key: WEB_CONCURRENCY
         value: 2 # sensible default
